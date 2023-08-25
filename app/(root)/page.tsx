@@ -3,8 +3,8 @@ import {UserButton} from "@clerk/nextjs";
 
 const HomePage: NextPage = () => {
   return (
-    <div>
-      <UserButton afterSignOutUrl="/" />
+    <div className="text-white flex items-center justify-center">
+      hello
     </div>
   );
 };

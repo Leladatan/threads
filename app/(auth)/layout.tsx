@@ -22,7 +22,9 @@ const LayoutAuth: FC<LayoutAuthProps> = ({children}) => {
         <ClerkProvider>
             <html lang="en">
             <body className={cn("bg-dark-1",inter.className)}>
-            {children}
+            <div className="flex justify-center items-center">
+                {children}
+            </div>
             </body>
             </html>
         </ClerkProvider>
