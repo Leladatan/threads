@@ -1,5 +1,4 @@
 import {NextPage} from "next";
-import {UserButton} from "@clerk/nextjs";
 
 const HomePage: NextPage = () => {
   return (
