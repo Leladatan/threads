@@ -1,8 +1,11 @@
 import {NextPage} from "next";
+import {UserButton} from "@clerk/nextjs";
 
 const HomePage: NextPage = () => {
   return (
-    <><h1>Threads</h1></>
+    <div>
+      <UserButton afterSignOutUrl="/" />
+    </div>
   );
 };
 
