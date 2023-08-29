@@ -1,11 +1,17 @@
+"use client";
+
 import {type FC} from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import {OrganizationSwitcher, SignedIn, SignOutButton} from "@clerk/nextjs";
 import {FiLogOut} from "react-icons/fi";
 import {dark} from "@clerk/themes";
+import {useRouter} from "next/navigation";
+import {AppRouterInstance} from "next/dist/shared/lib/app-router-context";
 
 const Header: FC = () => {
+    const router: AppRouterInstance = useRouter();
+
     return (
         <header>
             <nav className="fixed top-0 z-30 flex w-full items-center justify-between px-6 py-3">
@@ -25,7 +31,7 @@ const Header: FC = () => {
                 <div className="flex items-center gap-1">
                     <div className="block md:hidden">
                         <SignedIn>
-                            <SignOutButton>
+                            <SignOutButton signOutCallback={() => router.push("/sign-in")}>
                                 <FiLogOut className="text-white cursor-pointer" size={24}/>
                             </SignOutButton>
                         </SignedIn>

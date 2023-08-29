@@ -1,7 +1,12 @@
-import {NextPage} from "next";
+import {Metadata, NextPage} from "next";
 import AccountProfile from "@/app/(auth)/onboarding/components/AccountProfile";
 import {currentUser} from "@clerk/nextjs";
 import {User} from "@clerk/backend";
+
+export const metadata: Metadata = {
+    title: "Threads onboarding",
+    description: "Meta Threads App"
+};
 
 const OnboardingPage: NextPage = async () => {
     const user: User | null = await currentUser();

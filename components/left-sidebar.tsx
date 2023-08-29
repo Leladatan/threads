@@ -62,7 +62,7 @@ const LeftSidebar: FC = () => {
                 {routes.map(route => (
                     <Link href={route.href} key={route.href} className={cn("relative flex justify-start gap-4 " +
                         "rounded-lg hover:text-white transition",
-                        route.active ? "text-white" : "text-neutral-400")}>
+                        route.active ? "text-white" : "text-neutral-500")}>
                         <route.icon size={20} />
                         <p className="max-lg:hidden">{route.label}</p>
                     </Link>

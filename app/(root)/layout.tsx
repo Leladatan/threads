@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
       <ClerkProvider>
           <html lang="en">
-          <body className={cn("overflow-hidden overflow-y-auto scrollbar-thin", inter.className)}>
+          <body className={cn("overflow-hidden overflow-y-auto scrollbar-thin bg-neutral-900", inter.className)}>
           <Particles
               className="fixed inset-0 -z-10 animate-fade-in bg-neutral-950 block"
               quantity={100}

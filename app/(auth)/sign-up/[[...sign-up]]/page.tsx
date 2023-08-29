@@ -1,5 +1,10 @@
 import {SignUp} from "@clerk/nextjs";
-import {NextPage} from "next";
+import {Metadata, NextPage} from "next";
+
+export const metadata: Metadata = {
+    title: "Threads Sign Up",
+    description: "Meta Threads App"
+};
 
 const SignUpPage: NextPage = () => {
     return (
