@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {OrganizationSwitcher, SignedIn, SignOutButton} from "@clerk/nextjs";
 import {FiLogOut} from "react-icons/fi";
+import {dark} from "@clerk/themes";
 
 const Header: FC = () => {
     return (
@@ -32,6 +33,7 @@ const Header: FC = () => {
                     <OrganizationSwitcher
                         appearance={{
                             elements: {
+                                baseTheme: dark,
                                 organizationSwitcherTrigger: "py-2 px-4 text-white truncate w-[150px] md:w-[200px] lg:w-[300px]"
                             }
                         }}

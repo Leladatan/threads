@@ -1,7 +1,7 @@
-import {type FC} from 'react';
 import {SignUp} from "@clerk/nextjs";
+import {NextPage} from "next";
 
-const SignUpPage: FC = () => {
+const SignUpPage: NextPage = () => {
     return (
         <>
             <SignUp />
