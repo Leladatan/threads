@@ -11,6 +11,7 @@ import {Input} from "@/components/ui/input";
 import Image from "next/image";
 import {Textarea} from "@/components/ui/textarea";
 import {isBase64Image} from "@/lib/utils";
+import {useUploadThing} from "@/lib/uploadthing";
 
 interface AccountProfileProps {
     btnTitle: string;
@@ -26,6 +27,7 @@ const formSchema = z.object({
 
 const AccountProfile: FC<AccountProfileProps> = ({user, btnTitle}) => {
     const [files, setFiles] = useState<File[]>([]);
+    const {startUpload} = useUploadThing("media");
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -58,14 +60,19 @@ const AccountProfile: FC<AccountProfileProps> = ({user, btnTitle}) => {
         }
     };
 
-    const onSubmit = (values: z.infer<typeof formSchema>): void => {
+    const onSubmit = async (values: z.infer<typeof formSchema>): Promise<void> => {
         const blob: string = values.profile_photo;
         const hasImageChanged: boolean = isBase64Image(blob);
 
         if (hasImageChanged) {
-            const imgRes =
+            const imgRes = await startUpload(files);
+
+            if (imgRes && imgRes[0].fileUrl) {
+                values.profile_photo = imgRes[0].fileUrl;
+            }
         }
 
+        //todo
     };
 
     return (

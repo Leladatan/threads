@@ -1,14 +1,13 @@
 import {NextPage} from "next";
 import AccountProfile from "@/app/(auth)/onboarding/components/AccountProfile";
 import {currentUser} from "@clerk/nextjs";
+import {User} from "@clerk/backend";
 
 const OnboardingPage: NextPage = async () => {
-    const user = await currentUser();
+    const user: User | null = await currentUser();
     if (!user) return null;
 
-    const userInfo = {
-
-    }
+    const userInfo = {}
 
     const userData = {
         id: user.id,
