@@ -21,7 +21,7 @@ const LayoutAuth: FC<LayoutAuthProps> = ({children}) => {
     return (
         <ClerkProvider>
             <html lang="en">
-            <body className={cn("bg-dark-1",inter.className)}>
+            <body className={cn("overflow-hidden overflow-y-auto scrollbar-thin",inter.className)}>
             <div className="flex justify-center items-center">
                 {children}
             </div>

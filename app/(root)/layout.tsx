@@ -27,7 +27,7 @@ export default function RootLayout({
           <html lang="en">
           <body className={cn("overflow-hidden overflow-y-auto scrollbar-thin", inter.className)}>
           <Particles
-              className="fixed inset-0 -z-10 animate-fade-in bg-neutral-900 block"
+              className="fixed inset-0 -z-10 animate-fade-in bg-neutral-950 block"
               quantity={100}
           />
           <Header />

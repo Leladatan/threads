@@ -4,5 +4,5 @@ export interface IUserProfile {
     username: string;
     name: string;
     bio: string;
-    image: string;
+    imageUrl: string;
 }
